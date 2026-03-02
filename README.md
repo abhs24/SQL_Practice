@@ -103,9 +103,14 @@ SELECT first_name, last_name, 'Patient' AS role
 FROM patients
 UNION ALL
 SELECT first_name, last_name, 'Doctor' AS role 
-FROM doctors;
 
+FROM doctors;
 //
 
+Q.**Show the province_id(s), sum of height; where the total sum of its patient's height is greater than or equal to 7,000.**
+A->SELECT province_id, SUM(height) FROM patients GROUP BY province_id HAVING SUM(height) >= 7000
 
+Q.**Show all patient's first_name, last_name, and birth_date who were born in the 1970s decade. Sort the list starting from the earliest birth_date.**
+A->select first_name,last_name,birth_date  from patients where Year(birth_date) between 1970 and 1979
+order by birth_date ASC;
 
