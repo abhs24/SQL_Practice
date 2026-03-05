@@ -114,3 +114,11 @@ Q.**Show all patient's first_name, last_name, and birth_date who were born in th
 A->select first_name,last_name,birth_date  from patients where Year(birth_date) between 1970 and 1979
 order by birth_date ASC;
 
+**Q.Write SQL query to display customer name who order KeyBoard & Mouse
+https://www.programiz.com/sql/online-compiler**
+A-->SELECT c.first_name from Customers c join Orders o
+  on c.customer_id=o.customer_id
+where o.item IN('Keyboard','Mouse') 
+
+
+
